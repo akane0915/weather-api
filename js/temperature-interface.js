@@ -1,8 +1,7 @@
 var Temperature = require('./../js/temperature.js').temperatureModule;
 
-var displayTemperature = function(location, temperatureData, degreeType) {
-  debugger;
-  $('.showWeather').text("The temperature in " + location + " is " + temperatureData + " degrees " + degreeType + ".");
+var displayTemperature = function(location, temperatureData) {
+  $('.showWeather').text("The temperature in " + location + " is " + temperatureData + ".");
 };
 
 $(document).ready(function() {
