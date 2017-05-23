@@ -1,10 +1,17 @@
 var Weather = require('./../js/weather.js').weatherModule;
 
+var displayHumidity = function(location, humidityData) {
+  $('.showWeather').text("The humidity in " + location + " is " + humidityData + "%");
+}
+
 $(document).ready(function() {
-  $('#weather-location').click(function() {
+  var currentWeatherObject = new Weather();
+
+  $('#weather-location').click(function(event) {
     event.preventDefault();
     var location = $('#location').val();
-    console.log(location);
+    $('#location').val('');
+    var humidity = currentWeatherObject.getWeather(location, displayHumidity);
   });
 
 }); //document ready close
