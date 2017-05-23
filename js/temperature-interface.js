@@ -1,7 +1,7 @@
 var Temperature = require('./../js/temperature.js').temperatureModule;
 
 var displayTemperature = function(location, temperatureData) {
-  $('.showWeather').text("The temperature in " + location + " is " + temperatureData + ".");
+  $('.showWeather').append("The temperature in " + location + " is " + temperatureData + ".<br>");
 };
 
 $(document).ready(function() {
@@ -11,7 +11,6 @@ $(document).ready(function() {
     event.preventDefault();
     var location = $('#location').val();
     var degreeType = $('input:radio[name=degreeType]:checked').val();
-    $('#location').val('');
     var temperature = currentTemperatureObject.getTemperature(location, displayTemperature, degreeType);
   });
 
