@@ -7,7 +7,7 @@ var displayHumidity = function(location, humidityData) {
 $(document).ready(function() {
   var currentWeatherObject = new Weather();
 
-  $('#weather-location').click(function(event) {
+  $('#humidity').click(function(event) {
     event.preventDefault();
     var location = $('#location').val();
     $('#location').val('');
